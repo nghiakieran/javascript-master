@@ -75,3 +75,21 @@ let hasCarrot = arr.some((item) => {
 
 console.log("Has carrot: ", hasCarrot);
 
+
+// MAP 
+
+Array.prototype.map2 = function(cb) {
+    var length = this.length;
+    var arr = [];
+    for (let i = 0; i < length; i++) {
+        var result = cb(this[i], i);
+        arr.push(result);
+    }
+    return arr;
+}
+var courses = ['JS', 'PHP', 'MySQL']
+var html = courses.map2(function(course) {
+    return `<h1>${course}</h1>`;
+})
+console.log(html.join(''));
+
